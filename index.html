@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículum de Lidia Contreras, estudiante de Trabajo Social.">
+  <title>Currículum | Lidia Contreras</title>
+  <style>
+    :root {
+      /* Blanco puro para el fondo de la página y la tarjeta. */
+      --color-fondo: #FFFFFF;
+      /* Rosa pálido para el bloque desplazado que da profundidad a la tarjeta. */
+      --color-sombra: #F6DCDC;
+      /* Gris claro neutro para bordes y líneas divisorias. */
+      --color-borde: #E0E0E0;
+      /* Gris carbón para el nombre y los títulos principales. */
+      --color-principal: #333333;
+      /* Gris medio para los títulos de sección y detalles secundarios. */
+      --color-seccion: #757575;
+      /* Gris oscuro suave para el texto de lectura. */
+      --color-texto: #555555;
+      /* Rojo carmesí para los acentos decorativos. */
+      --color-acento: #B30000;
+      /* Azul corporativo para el detalle de la cabecera. */
+      --color-azul: #0066B2;
+      /* Azul cielo pastel para los fondos de detalles suaves. */
+      --color-azul-claro: #B3E0FF;
+      /* Gris antracita para el fondo del indicador decorativo. */
+      --color-antracita: #3D3D3D;
+
+      color-scheme: light;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--color-texto);
+      background: var(--color-fondo);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 48px 24px;
+      background: var(--color-fondo);
+    }
+
+    .resume {
+      position: relative;
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 54px 58px 48px;
+      border: 1px solid var(--color-borde);
+      background: var(--color-fondo);
+      box-shadow: 14px 14px 0 0 var(--color-sombra);
+    }
+
+    .resume-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--color-borde);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--color-azul);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--color-principal);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.055em;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+
+    .profile-photo {
+      display: block;
+      flex: 0 0 auto;
+      width: 132px;
+      height: 132px;
+      border: 4px solid var(--color-fondo);
+      border-radius: 50%;
+      outline: 1px solid var(--color-borde);
+      object-fit: cover;
+    }
+
+    .resume-content {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.55fr);
+    }
+
+    .sidebar {
+      padding: 30px 28px 0 0;
+      border-right: 1px solid var(--color-borde);
+    }
+
+    .main-column {
+      min-width: 0;
+      padding: 30px 0 0 34px;
+    }
+
+    .section {
+      padding: 0 0 24px;
+      margin: 0 0 24px;
+      border-bottom: 1px solid var(--color-borde);
+    }
+
+    .section:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      color: var(--color-seccion);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .contact-list,
+    .plain-list,
+    .entry-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      align-items: start;
+      gap: 10px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-icon {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      fill: none;
+      stroke: var(--color-seccion);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: var(--color-borde);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--color-acento);
+    }
+
+    .plain-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .plain-list li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .plain-list li::before {
+      position: absolute;
+      top: 0.72em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--color-acento);
+      content: "";
+    }
+
+    .entry-list {
+      display: grid;
+      gap: 21px;
+    }
+
+    .entry {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .entry::before {
+      position: absolute;
+      top: 0.45em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-azul-claro);
+      content: "";
+    }
+
+    .entry-title {
+      margin: 0;
+      color: var(--color-principal);
+      font-size: 0.93rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .entry-meta {
+      margin: 3px 0 0;
+      color: var(--color-seccion);
+      font-size: 0.83rem;
+      line-height: 1.5;
+    }
+
+    .entry-description {
+      margin: 8px 0 0;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .entry-description + .entry-description {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 24px 16px;
+      }
+
+      .resume {
+        padding: 32px 26px;
+      }
+
+      .resume-header {
+        gap: 20px;
+        padding-bottom: 26px;
+      }
+
+      .profile-photo {
+        width: 96px;
+        height: 96px;
+      }
+
+      .resume-content {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        padding: 26px 0 0;
+        border-right: 0;
+      }
+
+      .main-column {
+        padding: 0;
+      }
+
+      .section {
+        padding-bottom: 21px;
+        margin-bottom: 21px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      .resume {
+        padding: 26px 20px;
+      }
+
+      .resume-header {
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .profile-photo {
+        width: 76px;
+        height: 76px;
+      }
+
+      .eyebrow {
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 9vw, 2.5rem);
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+      }
+
+      .resume {
+        width: 100%;
+        border-color: var(--color-borde);
+      }
+
+      .resume {
+        box-shadow: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <header class="resume-header">
+      <div>
+        <p class="eyebrow">Estudiante de Trabajo Social</p>
+        <h1>Lidia<br>Contreras</h1>
+      </div>
+      <img class="profile-photo" src="imagenes/foto.jpg" alt="Foto de Lidia Contreras" width="132" height="132">
+    </header>
+
+    <div class="resume-content">
+      <aside class="sidebar">
+        <!-- ===== SECCIÓN: CONTACTO ===== -->
+        <section class="section" aria-labelledby="contacto-titulo">
+          <h2 class="section-title" id="contacto-titulo">Datos de contacto</h2>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.5-3.5 3.2-5.5 7-5.5s6.5 2 7 5.5"></path></svg>
+              <span>Lidia Contreras</span>
+            </li>
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5Z"></path><path d="M10 17.5h4"></path></svg>
+              <a href="tel:+34666849203">+34 666849203</a>
+            </li>
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"></rect><path d="m4.5 7 7.5 6 7.5-6"></path></svg>
+              <a href="mailto:lidiacontrerasrodriguez05@gmail.com">lidiacontrerasrodriguez05@gmail.com</a>
+            </li>
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg>
+              <span>San José del Valle (Cádiz)</span>
+            </li>
+          </ul>
+        </section>
+        <!-- ===== FIN: CONTACTO ===== -->
+
+        <!-- ===== SECCIÓN: HABILIDADES ===== -->
+        <section class="section" aria-labelledby="habilidades-titulo">
+          <h2 class="section-title" id="habilidades-titulo">Habilidades</h2>
+          <ul class="plain-list">
+            <li>Compromiso</li>
+            <li>Responsabilidad</li>
+            <li>Capacidad de adaptación</li>
+          </ul>
+        </section>
+        <!-- ===== FIN: HABILIDADES ===== -->
+
+        <!-- ===== SECCIÓN: IDIOMAS ===== -->
+        <section class="section" aria-labelledby="idiomas-titulo">
+          <h2 class="section-title" id="idiomas-titulo">Idiomas</h2>
+          <ul class="plain-list">
+            <li><strong>Español:</strong> Idioma nativo</li>
+            <li><strong>Inglés:</strong> Nivel B1 (Cambridge)</li>
+          </ul>
+        </section>
+        <!-- ===== FIN: IDIOMAS ===== -->
+
+        <!-- ===== SECCIÓN: OTROS ===== -->
+        <section class="section" aria-labelledby="otros-titulo">
+          <h2 class="section-title" id="otros-titulo">Otros</h2>
+          <ul class="plain-list">
+            <li>Carnet de conducir B</li>
+            <li>Disponibilidad de coche propio</li>
+          </ul>
+        </section>
+        <!-- ===== FIN: OTROS ===== -->
+      </aside>
+
+      <div class="main-column">
+        <!-- ===== SECCIÓN: SOBRE MÍ ===== -->
+        <section class="section" aria-labelledby="sobre-mi-titulo">
+          <h2 class="section-title" id="sobre-mi-titulo">Sobre mí</h2>
+          <p class="entry-description">Persona comprometida, responsable y con gran capacidad de adaptación, forjada a través de su experiencia como voluntaria en el trato y acompañamiento de personas.</p>
+          <p class="entry-description">Sus vivencias previas le han permitido crecer tanto en el plano personal como en el académico.</p>
+          <p class="entry-description">Actualmente busca continuar su formación y adquirir experiencia profesional en el ámbito del Trabajo Social.</p>
+        </section>
+        <!-- ===== FIN: SOBRE MÍ ===== -->
+
+        <!-- ===== SECCIÓN: EXPERIENCIA ===== -->
+        <section class="section" aria-labelledby="experiencia-titulo">
+          <h2 class="section-title" id="experiencia-titulo">Experiencia</h2>
+          <ol class="entry-list">
+            <li class="entry">
+              <h3 class="entry-title">Voluntariado UCA — Asociación Asperger TEA Cádiz</h3>
+              <p class="entry-meta">Jerez de la Frontera · 2024 / 2025</p>
+              <p class="entry-description">Participación en el Programa de Ocio Inclusivo.</p>
+              <p class="entry-description">Acompañamiento y apoyo a personas con TEA en actividades de ocio y tiempo libre, favoreciendo la inclusión social y la autonomía.</p>
+            </li>
+            <li class="entry">
+              <h3 class="entry-title">Voluntariado UCA — Fundación Mornese</h3>
+              <p class="entry-meta">Jerez de la Frontera · 2023 / 2024</p>
+              <p class="entry-description">Participación en el Proyecto Mejora: Refuerzo Educativo y Apoyo Emocional.</p>
+              <p class="entry-description">Colaboración en el refuerzo escolar y educativo, además del acompañamiento a menores y jóvenes en su desarrollo integral.</p>
+            </li>
+          </ol>
+        </section>
+        <!-- ===== FIN: EXPERIENCIA ===== -->
+
+        <!-- ===== SECCIÓN: FORMACIÓN ===== -->
+        <section class="section" aria-labelledby="formacion-titulo">
+          <h2 class="section-title" id="formacion-titulo">Formación</h2>
+          <ol class="entry-list">
+            <li class="entry">
+              <h3 class="entry-title">Grado Universitario en Trabajo Social</h3>
+              <p class="entry-meta">Universidad de Cádiz — Campus de Jerez · 2023 - Actualidad</p>
+            </li>
+            <li class="entry">
+              <h3 class="entry-title">Bachillerato de Ciencias Sociales</h3>
+              <p class="entry-meta">IES Vega del Guadalete — La Barca de la Florida · 2021 - 2023</p>
+            </li>
+            <li class="entry">
+              <h3 class="entry-title">Educación Secundaria Obligatoria</h3>
+              <p class="entry-meta">La Salle San José — Chiclana de la Frontera · 2017 - 2021</p>
+            </li>
+            <li class="entry">
+              <h3 class="entry-title">II Seminario Avanzado «El enfoque de la Resiliencia Local y la Justicia Global»</h3>
+              <p class="entry-meta">XI Escuela de Solidaridad UCA · 2025</p>
+            </li>
+          </ol>
+        </section>
+        <!-- ===== FIN: FORMACIÓN ===== -->
+      </div>
+    </div>
+  </main>
+</body>
+</html>
